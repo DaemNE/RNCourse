@@ -1,38 +1,33 @@
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import {
+  Button,
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import { CounterContainer } from "./components/CounterContainer";
+import { GoalInput } from "./components/GoalInput";
+import { GoalItem } from "./components/GoalItem";
+import { GoalsContainer } from "./components/GoalsContainer";
 
 export default function App() {
+  const [courseGoals, setCourseGoals] = useState([]);
+
   return (
-    <View style={styles.container}>
-      <View>
-        <Text>Another piece of text!</Text>
-      </View>
-      <Text style={styles.textContent}>Hello world!</Text>
-      <Text
-        style={{
-          margin: 16,
-          borderColor: "black",
-          borderWidth: 1,
-          padding: 16,
-        }}
-      >
-        Hello world!
-      </Text>
-      <Button title="Tap me!" />
+    <View style={styles.appContainer}>
+      <GoalInput courseGoals={courseGoals} setCourseGoals={setCourseGoals} />
+      <GoalsContainer courseGoals={courseGoals} />
+      <CounterContainer />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  textContent: {
-    margin: 16,
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 16,
+    paddingTop: 50,
+    paddingHorizontal: 16,
   },
 });
