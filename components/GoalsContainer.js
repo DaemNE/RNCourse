@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { FlatList, View, StyleSheet } from "react-native";
+import React from "react";
+import { FlatList, View, StyleSheet, Text } from "react-native";
 import { GoalItem } from "./GoalItem";
 
 export const GoalsContainer = ({ courseGoals, setCourseGoals }) => {
   return (
     <View style={styles.goalsContainer}>
+      <Text style={styles.title}>Goals for the new year!</Text>
       <FlatList
         data={courseGoals}
         renderItem={(itemData) => {
@@ -30,5 +31,12 @@ const styles = StyleSheet.create({
     flex: 3,
     backgroundColor: "rgba(0, 0, 0, 0.3)",
     borderRadius: 6,
+    marginBottom: 6,
+  },
+  title: {
+    textAlign: "center",
+    fontSize: 30,
+    textDecorationLine: "underline",
+    fontWeight: "bold",
   },
 });

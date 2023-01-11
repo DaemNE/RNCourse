@@ -5,22 +5,29 @@ export const GoalItem = ({ text, id, courseGoals, setCourseGoals }) => {
     setCourseGoals(courseGoals.filter((item) => item.id !== value));
   };
   return (
-    <Pressable onPress={() => deleteGoalHandler(id)}>
-      <View style={styles.listItem}>
+    <View style={styles.listItem}>
+      <Pressable
+        android_ripple={{ color: "#dddddd" }}
+        onPress={() => deleteGoalHandler(id)}
+        style={({ pressed }) => pressed && styles.pressedItem}
+      >
         <Text style={styles.listItemText}>{text}</Text>
-      </View>
-    </Pressable>
+      </Pressable>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   listItem: {
     margin: 8,
-    padding: 8,
     borderRadius: 6,
     backgroundColor: "#5e0acc",
   },
+  pressedItem: {
+    opacity: 0.5,
+  },
   listItemText: {
     color: "white",
+    padding: 8,
   },
 });
