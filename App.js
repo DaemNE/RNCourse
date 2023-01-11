@@ -10,7 +10,10 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <GoalInput courseGoals={courseGoals} setCourseGoals={setCourseGoals} />
-      <GoalsContainer courseGoals={courseGoals} />
+      <GoalsContainer
+        courseGoals={courseGoals}
+        setCourseGoals={setCourseGoals}
+      />
       <CounterContainer />
     </View>
   );

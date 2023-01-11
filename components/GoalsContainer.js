@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import { FlatList, View, StyleSheet } from "react-native";
 import { GoalItem } from "./GoalItem";
 
-export const GoalsContainer = ({ courseGoals }) => {
+export const GoalsContainer = ({ courseGoals, setCourseGoals }) => {
   return (
     <View style={styles.goalsContainer}>
       <FlatList
         data={courseGoals}
         renderItem={(itemData) => {
-          return <GoalItem text={itemData.item.text} />;
+          return (
+            <GoalItem
+              text={itemData.item.text}
+              id={itemData.item.id}
+              courseGoals={courseGoals}
+              setCourseGoals={setCourseGoals}
+            />
+          );
         }}
         keyExtractor={(item, index) => {
           return item.id;
