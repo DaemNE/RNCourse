@@ -1,15 +1,7 @@
 import { useState } from "react";
-import {
-  Button,
-  FlatList,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import { CounterContainer } from "./components/CounterContainer";
 import { GoalInput } from "./components/GoalInput";
-import { GoalItem } from "./components/GoalItem";
 import { GoalsContainer } from "./components/GoalsContainer";
 
 export default function App() {

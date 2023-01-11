@@ -13,7 +13,6 @@ export const GoalsContainer = ({ courseGoals }) => {
         keyExtractor={(item, index) => {
           return item.id;
         }}
-        alwaysBounceVertical={false}
       />
     </View>
   );
