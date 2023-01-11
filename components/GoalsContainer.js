@@ -29,7 +29,6 @@ export const GoalsContainer = ({ courseGoals, setCourseGoals }) => {
 const styles = StyleSheet.create({
   goalsContainer: {
     flex: 3,
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
     borderRadius: 6,
     marginBottom: 6,
   },
@@ -38,5 +37,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textDecorationLine: "underline",
     fontWeight: "bold",
+    paddingBottom: 30,
+    color: "white",
   },
 });

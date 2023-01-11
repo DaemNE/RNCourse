@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
-import { Button, TextInput, View, StyleSheet, Modal, Text } from "react-native";
+import {
+  Button,
+  TextInput,
+  View,
+  StyleSheet,
+  Modal,
+  Image,
+} from "react-native";
 
 export const GoalInput = ({
-  courseGoals,
   setCourseGoals,
   modalIsVisible,
   setModalIsVisible,
@@ -23,22 +29,29 @@ export const GoalInput = ({
   return (
     <Modal visible={modalIsVisible} animationType="slide">
       <View style={styles.inputContainer}>
+        <Image
+          source={require("../assets/images/adaptive-icon.png")}
+          style={styles.image}
+        />
         <TextInput
-          placeholder="Your course goal!"
+          placeholder="enter your course goal.."
           style={styles.textInput}
           onChangeText={(enteredText) => setEnteredGoalText(enteredText)}
           value={enteredGoalText}
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button title="Add Goal!" onPress={addGoalHandler} />
-          </View>
-
-          <View style={styles.button}>
             <Button
               title="Cancel"
               onPress={() => setModalIsVisible(false)}
-              color="red"
+              color="#f31282"
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Add Goal!"
+              onPress={addGoalHandler}
+              color={"#b180f0"}
             />
           </View>
         </View>
@@ -50,18 +63,21 @@ export const GoalInput = ({
 const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
-    borderColor: "#CCCCCC",
+    borderColor: "#e4d0ff",
+    backgroundColor: "#e4d0ff",
     width: "100%",
-    padding: 8,
+    padding: 16,
+    color: "#120438",
+    borderRadius: 6,
   },
   inputContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 24,
-    borderBottomWidth: 1,
-    borderBottomColor: "#CCCCCC",
     padding: 16,
+    backgroundColor: "#311B6B",
+    paddingBottom: 140,
+    color: "white",
   },
   buttonContainer: {
     flexDirection: "row",
@@ -70,5 +86,10 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     marginHorizontal: 8,
+  },
+  image: {
+    width: 100,
+    height: 100,
+    margin: 20,
   },
 });
